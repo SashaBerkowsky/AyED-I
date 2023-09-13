@@ -1,7 +1,7 @@
 # AyED-I
-Ejercicios de Algoritmos y Estructuras de Datos
+Algoritmos y Estructuras de Datos
 
-# [Prácticas](https://github.com/SashaBerkowsky/AyED-I/tree/main/Pr%C3%A1cticas)
+## [Prácticas](https://github.com/SashaBerkowsky/AyED-I/tree/main/Pr%C3%A1cticas)
 |Práctica | Enunciados | Soluciones |
 | -- | -- | -- |
 |[3](https://github.com/SashaBerkowsky/AyED-I/tree/main/Pr%C3%A1cticas/Pr%C3%A1ctica%203) | [Introducción a Haskell](https://github.com/SashaBerkowsky/AyED-I/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica%203/enunciado.pdf) | [Práctica 3](https://github.com/SashaBerkowsky/AyED-I/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica%203/practica3.hs) |
