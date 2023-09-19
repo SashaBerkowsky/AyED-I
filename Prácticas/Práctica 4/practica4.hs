@@ -176,10 +176,10 @@ esFibonacciDesde e n | elemFibonacci > n = False
 
 -- 18
 mayorDigitoPar :: Integer -> Integer
-mayorDigitoPar n  = compararMayorDigitoPar n (-1)
+mayorDigitoPar = compararMayorDigitoPar (-1)
 
 compararMayorDigitoPar :: Integer -> Integer -> Integer
-compararMayorDigitoPar n dm | n == 0 = dm 
+compararMayorDigitoPar dm n | n == 0 = dm
                             | even ultimoDigito = compararMayorDigitoPar (div n 10) (max ultimoDigito dm)
                             | otherwise = compararMayorDigitoPar (div n 10) dm
                         where ultimoDigito = obtenerUltimoDigito n
@@ -192,11 +192,11 @@ restarPrimos :: Integer -> Integer -> Integer
 restarPrimos n p | p <= 0 = p
                  | otherwise = restarPrimos (n + 1) (p - nPrimo)
                  where nPrimo = nEsimoPrimo n
-                 
+
 -- 20
 sumaDivisores:: Integer -> Integer -> Integer -> Integer
 sumaDivisores n i s | n == i = s + n
-                    | mod n i == 0 = sumaDivisores n (i + 1) (s + i)  
+                    | mod n i == 0 = sumaDivisores n (i + 1) (s + i)
                     | otherwise = sumaDivisores n (i + 1) s
 
 obtenerMaxSumaDivisores :: Integer -> Integer -> Integer -> Integer -> Integer
