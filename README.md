@@ -9,3 +9,4 @@ Algoritmos y Estructuras de Datos
 |[5]() | [Recursión sobre Listas]() | [Práctica 5]() |
 
 ## [Simulacros de examen](https://github.com/SashaBerkowsky/AyED-I/tree/main/Simulacros%20de%20examen/Simulacro%20primer%20parcial)
+- [Simulacro Primer Parcial I](https://github.com/SashaBerkowsky/AyED-I/tree/main/Simulacros%20de%20examen/Simulacro%20primer%20parcial)
