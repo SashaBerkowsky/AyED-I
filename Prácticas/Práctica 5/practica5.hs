@@ -140,14 +140,35 @@ obtenerMenor (x:xs) n | longitud xs == 0 = min x n
                       | x < n = obtenerMenor xs x
                       | otherwise = obtenerMenor xs n
 
--- 4.1
-sacarBlancosRepetidos :: [Char] -> [Char]
-sacarBlancosRepetidos [] = []
-sacarBlancosRepetidos (x:xs) | x == ' ' && head xs == ' ' = sacarBlancosRepetidos xs
-                             | otherwise = x:sacarBlancosRepetidos xs
+-- 5.1
+sumaAcumulada :: (Num t) => [t] -> [t]
+sumaAcumulada (x:xs) = sumarElementos (x:xs) [x] 
 
--- 4.2
-contarPalabras :: [Char] -> Integer
-contarPalabras [] = 1
-contarPalabras (x:xs) | x == ' ' = 1 + contarPalabras xs
-                      | otherwise = contarPalabras xs
+sumarElementos :: (Num t) => [t] -> [t] -> [t]
+sumarElementos (x:xs) y | longX == longY = y
+                        | otherwise = sumarElementos (x:xs) (y ++ [sumarHasta (x:xs) longY])
+                            where longX = longitud (x:xs)
+                                  longY = longitud y
+
+sumarHasta :: (Num t) => [t] -> Integer -> t
+sumarHasta _ (-1) = 0
+sumarHasta (x:xs) t = x + sumarHasta xs (t-1)
+
+-- 5.2
+descomponerEnPrimos :: [Integer] -> [[Integer]]
+descomponerEnPrimos [x] = [descomponer x]
+descomponerEnPrimos (x:xs) = descomponer x:descomponerEnPrimos xs
+
+descomponer :: Integer -> [Integer]
+descomponer 1 = []
+descomponer n = divisor:descomponer (div n divisor)
+              where divisor = menorDivisorPrimo 2 n
+
+menorDivisorPrimo :: Integer -> Integer -> Integer
+menorDivisorPrimo d n | dEsPrimo && mod n d == 0 = d
+                      | otherwise = menorDivisorPrimo (d+1) n
+                      where dEsPrimo = menorDivisor d 2 == d
+
+menorDivisor :: Integer -> Integer -> Integer
+menorDivisor n i | mod n i == 0 = i
+                 | otherwise = menorDivisor n (i+1)

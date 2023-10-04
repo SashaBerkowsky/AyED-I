@@ -39,9 +39,6 @@ acumularAmigos p ((p1, p2):rs) a | pertenece p1 a || pertenece p2 a = acumularAm
                                  | p == p2 = acumularAmigos p rs (a ++ [p1])
                                  | otherwise = acumularAmigos p rs a
 
-longitud :: [String] -> Integer
-longitud = foldr (\ x -> (+) 1) 0
-
 personaConMasAmigos :: [(String, String)] -> String
 personaConMasAmigos (x:xs) = compararCantApariciones (x:xs) listaPersonas (head listaPersonas)
                           where listaPersonas = personas (x:xs)
@@ -56,6 +53,7 @@ cantApariciones _ [] = 0
 cantApariciones p (r:rs) | p == fst r || p == snd r = 1 + cantApariciones p rs
                          | otherwise = cantApariciones p rs
 
+-- Testing a mano
 relacion1 :: (String, String)
 relacion1 = ("yo", "otro")
 
