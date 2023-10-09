@@ -1,7 +1,8 @@
--- 1
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use foldr" #-}
+-- NOTA: 10
+-- 1
 golesDeNoGoleadores :: [(String, String)] -> [Int] -> Int -> Int
 golesDeNoGoleadores goleadoresPorEquipo goles totalesGolesTorneo = totalesGolesTorneo - sumatoriaGoles goles
 
