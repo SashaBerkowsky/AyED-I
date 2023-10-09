@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 relacionesValidas :: [(String, String)] -> Bool
 relacionesValidas [] = True
 relacionesValidas ((x, y):rs) | x == y = False

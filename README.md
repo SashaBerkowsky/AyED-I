@@ -19,6 +19,8 @@ Repositorio de Algoritmos y Estructuras de Datos I (me gusta mas como suena)
 | ------------------------------- | -------------------------------------------------- | ------------------------------------------------- |
 | [1](/Parciales/1%20-%20Haskell) | [Tema 1](/Parciales/1%20-%20Haskell/enunciado.pdf) | [Solución](/Parciales/1%20-%20Haskell/parcial.hs) |
 
-## [Simulacros de examen](https://github.com/SashaBerkowsky/AyED-I/tree/main/Simulacros%20de%20examen/Simulacro%20primer%20parcial)
+## [Simulacros de examen](/Simulacros/1%20-%20Haskell/)
 
-- [Simulacro Primer Parcial I](https://github.com/SashaBerkowsky/AyED-I/tree/main/Simulacros%20de%20examen/Simulacro%20primer%20parcial)
+- [Simulacro Primer Parcial](/Simulacros/1%20-%20Haskell/enunciado.pdf)
+  - [Solución A](/Simulacros/1%20-%20Haskell/simulacro.hs)
+  - [Solución B](/Simulacros/1%20-%20Haskell/simulacro-b.hs)
