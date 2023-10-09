@@ -18,6 +18,7 @@ Repositorio de Algoritmos y Estructuras de Datos I (me gusta mas como suena)
 | Parcial                         | Enunciado                                          | Solución                                          |
 | ------------------------------- | -------------------------------------------------- | ------------------------------------------------- |
 | [1](/Parciales/1%20-%20Haskell) | [Tema 1](/Parciales/1%20-%20Haskell/enunciado.pdf) | [Solución](/Parciales/1%20-%20Haskell/parcial.hs) |
+| [2](/Parciales/2%20-%20Python)  | [TODO](/Parciales/2%20-%20Python/enunciado.pdf)    | [TODO](/Parciales/2%20-%20Python/parcial.py)      |
 
 ## [Simulacros de examen](/Simulacros/1%20-%20Haskell/)
 
