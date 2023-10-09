@@ -164,12 +164,47 @@ def viaje_en_el_tiempo(año_partida: int, año_llegada: int) -> None:
 
 # 6.6
 def conocer_aristoteles(año_partida: int) -> None:
-    AÑO_ARISTOTELES = 384
+    AÑO_ARISTOTELES = -384
     desde = año_partida - 20
     while (desde >= AÑO_ARISTOTELES):
-        print("Viajó veinte años al pasado, estamos en el año: " + str(desde))
+        año_actual: str = str(desde) if desde >= 0 else (str(desde * (-1)) + " a.c")
+        print("Viajó veinte años al pasado, estamos en el año:", año_actual)
         desde -= 20
 
-conocer_aristoteles(404)
-conocer_aristoteles(494)
-conocer_aristoteles(495)
+# 7.1
+def imprimir_1_a_10_for() -> None:
+    for i in range(1, 11):
+        print(i)
+
+# 7.2
+def imprimir_pares_10_a_40_for() -> None:
+    for i in range(10, 41, 2):
+        print(i)
+
+# 7.3
+def imprimir_eco_10_veces_for() -> None:
+    for _ in range(10):
+        print("eco")
+
+# 7.4
+def cuenta_regresiva_for(desde: int) -> None:
+    for i in range(desde, 0, -1):
+        print(i)
+    print("Despegue!")
+
+# 7.5
+def viaje_en_el_tiempo_for(año_salida: int, año_llegada: int) -> None:
+    for i in range(año_salida, año_llegada - 1, -1):
+        print("Viajó un año al pasado, estamos en el año: " + str(i))
+
+# 7.6
+def conocer_aristoteles_for(año_partida: int) -> None:
+    AÑO_ARISTOTELES = -384
+    for i in range(año_partida - 20, AÑO_ARISTOTELES + 20, -20):
+        año_actual: str = str(i) if i >= 0 else (str(i * (-1)) + " a.c")
+        print("Viajó veinte años al pasado, estamos en el año: ", año_actual)
+
+
+
+conocer_aristoteles_for(20)
+
