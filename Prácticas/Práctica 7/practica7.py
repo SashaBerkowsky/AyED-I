@@ -44,7 +44,7 @@ def longitud_mayor_7(frase: str) -> bool:
 def es_palindromo(palabra: str) -> bool:
     i: int = 0
     palabraMinuscula = palabra.lower()
-    longitud_palabra: i = len(palabraMinuscula)
+    longitud_palabra: int = len(palabraMinuscula)
     while(i < longitud_palabra and palabraMinuscula[i] == palabraMinuscula[longitud_palabra - i - 1]):
         i+=1
     return i == longitud_palabra
@@ -98,7 +98,7 @@ def tiene_3_vocales_distintas(palabra: str) -> bool:
     i: int = 0
     longitudPalabra = len(palabra)
     vocalesExistentes: list[str] = ["a","e","i","o","u"]
-    vocales: str = []
+    vocales: list[str] = []
 
     while (i < longitudPalabra and len(vocales) < 3):
         letraMinuscula = palabra[i].lower()
