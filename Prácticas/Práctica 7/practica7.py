@@ -224,8 +224,18 @@ def sistema_sube() -> None:
 
 # 4.3
 def siete_y_medio() -> None:
-    INPUT_PROMPT: str = "Plantarse (P) o seguir (S)?"  
-    numero: int = random.randint(1, 12)
-    continuar = input(INPUT_PROMPT).upper() != "P"
+    INPUT_PROMPT: str = "Plantarse (P) o seguir (S)? "  
+    puntuacion: float = 0
+    cartas: list[float] = []
+    continuar: bool = True
+    while (continuar and puntuacion < 7.5):
+        numero: int = random.choice([1,2,3,4,5,6,7,10,11,12])
+        valor: float = numero if numero < 10 else 0.5
+        puntuacion += valor
+        cartas.append(numero)
+        continuar = input(INPUT_PROMPT).upper() != "P"
     
-sistema_sube()
+    print("Perdiste" if puntuacion >= 7.5 else "Ganaste")
+    print(cartas)
+        
+siete_y_medio()
