@@ -1,3 +1,5 @@
+import random
+
 # 1.1
 def pertenece_A(s: list[int], e: int) -> bool:
     return e in s
@@ -168,13 +170,62 @@ def eliminar_repetidos(texto: str) -> str:
 
     return textoSinRepetidos
 
-print(eliminar_repetidos("manzana"))
+# 3
+def aprobado(notas: list[int]) -> int:
+    promedio: int = round(sum(notas)/len(notas))
+    reproboExamenes = hay_notas_reprobadas(notas)
+    if (not reproboExamenes and promedio >= 7):
+        return 1
+    elif (not reproboExamenes and promedio >= 4):
+        return 2
+    else:
+        return 3
     
-            
+def hay_notas_reprobadas(notas: list[int]) -> bool:
+    i: int = 0
+    tieneReprobados: bool = False
+    while (i < len(notas) and not tieneReprobados):
+        tieneReprobados = notas[i] < 4
+        i+=1
 
+    return tieneReprobados
 
+# 4.1
+def pedir_nombres_de_estudiantes() -> None:
+    INPUT_PROMPT: str = "Ingrese el nombre del estudiante "
+    lista: list[str] = []
+    nombre: str = input(INPUT_PROMPT)
 
-        
+    while(nombre != "listo"):
+        lista.append(nombre)
+        nombre = input(INPUT_PROMPT)
 
+    print(lista)
 
+# 4.2
+def sistema_sube() -> None:
+    INPUT_PROMPT: str = "C = Cargar creditos, D = Descontar creditos, X = Finalizar\n"
+    saldo: int = 0
+    movimiento: str = input(INPUT_PROMPT).upper()
+    historial: list[tuple[str, int]] = []
+
+    # asumo que siempre es C, D o X
+    while(movimiento != "X"):
+        monto: int = int(input("Ingrese el monto "))
+        historial.append((movimiento, monto))
+        if (movimiento == "C"):
+            saldo += monto
+        else:
+            saldo -= monto
+        movimiento = input(INPUT_PROMPT).upper()
+
+    print("Su saldo total es de $" + str(saldo))
+    print(historial)
+
+# 4.3
+def siete_y_medio() -> None:
+    INPUT_PROMPT: str = "Plantarse (P) o seguir (S)?"  
+    numero: int = random.randint(1, 12)
+    continuar = input(INPUT_PROMPT).upper() != "P"
     
+sistema_sube()
