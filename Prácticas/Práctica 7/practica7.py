@@ -237,5 +237,14 @@ def siete_y_medio() -> None:
     
     print("Perdiste" if puntuacion >= 7.5 else "Ganaste")
     print(cartas)
-        
-siete_y_medio()
+
+# 5.1
+def pertenece_a_cada_uno(s: list[list[int]], e: int) -> list[bool]:
+    res: list[bool] = []
+
+    for array in s:
+        res.append(pertenece_B(array, e))
+
+    return res
+
+print(pertenece_a_cada_uno([[1,2],[1,3]], 2))
