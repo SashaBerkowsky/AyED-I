@@ -1,17 +1,17 @@
 import random
 
 # 1.1
-def pertenece_A(s: list[int], e: int) -> bool:
+def perteneceA(s: list[int], e: int) -> bool:
     return e in s
 
-def pertenece_B(s: list, e) -> bool:
+def perteneceB(s: list, e) -> bool:
     return e in s
 
-def pertenece_C(s, e) -> bool:
+def perteneceC(s, e) -> bool:
     return e in s
 
 # 1.2
-def divide_a_todos(s: list[int], e:int) -> bool:
+def divideATodos(s: list[int], e:int) -> bool:
     i: int = 0
     longitud_secuencia: int = len(s)
     while (i < longitud_secuencia and s[i] % e == 0):
@@ -19,7 +19,7 @@ def divide_a_todos(s: list[int], e:int) -> bool:
     return i == longitud_secuencia
 
 # 1.3
-def suma_total(s: list[int]) -> int:
+def sumaTotal(s: list[int]) -> int:
     suma: int = 0
     for e in s:
         suma += e
@@ -34,7 +34,7 @@ def ordenados(s: list[int]) -> bool:
     return i == longitud_secuencia - 1
 
 # 1.5
-def longitud_mayor_7(frase: str) -> bool:
+def longitudMayorSiete(frase: str) -> bool:
     i: int = 0
     palabras: list[str] = frase.split(' ')
     cantidad_palabras: int = len(palabras)
@@ -43,7 +43,7 @@ def longitud_mayor_7(frase: str) -> bool:
     return i != cantidad_palabras
 
 # 1.6
-def es_palindromo(palabra: str) -> bool:
+def esPalindromo(palabra: str) -> bool:
     i: int = 0
     palabraMinuscula = palabra.lower()
     longitud_palabra: int = len(palabraMinuscula)
@@ -62,7 +62,7 @@ def es_letra_mayuscula(ascii: int) -> bool:
 def es_letra_minuscula(ascii: int) -> bool:
     return (ascii >= 97 and ascii <= 122) or ascii == 241
 
-def fortaleza_contraseña(contraseña: str) -> str:
+def fortalezaContraseña(contraseña: str) -> str:
     longitud_contraseña: int = len(contraseña)
     tieneMinuscula: bool = False
     tieneMayuscula: bool = False
@@ -83,7 +83,7 @@ def fortaleza_contraseña(contraseña: str) -> str:
         return "ROJA"
 
 # 1.8
-def movimientos_cuenta_bancaria(movimientos: list[tuple[str, int]]) -> int:
+def movimientosCuentaBancaria(movimientos: list[tuple[str, int]]) -> int:
     saldo: int = 0
     for movimiento in movimientos:
         tipoMovimiento = movimiento[0]
@@ -96,7 +96,7 @@ def movimientos_cuenta_bancaria(movimientos: list[tuple[str, int]]) -> int:
     return saldo
 
 # 1.9
-def tiene_3_vocales_distintas(palabra: str) -> bool:
+def tiene3VocalesDistintas(palabra: str) -> bool:
     i: int = 0
     longitudPalabra = len(palabra)
     vocalesExistentes: list[str] = ["a","e","i","o","u"]
@@ -111,14 +111,14 @@ def tiene_3_vocales_distintas(palabra: str) -> bool:
     return len(vocales) == 3
 
 # 2.1
-def borrar_posiciones_pares(s: list[int]) -> list[int]:
+def borrarPosicionesPares(s: list[int]) -> list[int]:
     for i in range(len(s)):
         if(i % 2 == 0):
             s[i] = 0
     return s
 
 # 2.2
-def borrar_posiciones_pares_B(s: list[int]) -> list[int]:
+def borrarPosicionesParesB(s: list[int]) -> list[int]:
     nuevaSecuencia: list[int] = []
 
     for i in range(len(s)):
@@ -128,7 +128,7 @@ def borrar_posiciones_pares_B(s: list[int]) -> list[int]:
     return nuevaSecuencia
 
 # 2.3
-def quitar_vocales(texto: str) -> str:
+def quitarVocales(texto: str) -> str:
     vocales: list[str] = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"]
     textoSinVocales: str = ""
 
@@ -139,7 +139,7 @@ def quitar_vocales(texto: str) -> str:
     return textoSinVocales
 
 # 2.4
-def reemplaza_vocales(texto: str) -> str:
+def reemplazaVocales(texto: str) -> str:
     vocales: list[str] = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"]
     textoModificado: str = ""
 
@@ -152,7 +152,7 @@ def reemplaza_vocales(texto: str) -> str:
     return textoModificado
     
 # 2.5
-def da_vuelta_str(texto: str) -> str:
+def daVueltaStr(texto: str) -> str:
     textoModificado: str = ""
 
     for i in range(1, len(texto) + 1):
@@ -161,7 +161,7 @@ def da_vuelta_str(texto: str) -> str:
     return textoModificado
 
 # 2.6
-def eliminar_repetidos(texto: str) -> str:
+def eliminarRepetidos(texto: str) -> str:
     textoSinRepetidos: str = ""
 
     while(len(texto) != 0):
@@ -173,7 +173,7 @@ def eliminar_repetidos(texto: str) -> str:
 # 3
 def aprobado(notas: list[int]) -> int:
     promedio: int = round(sum(notas)/len(notas))
-    reproboExamenes = hay_notas_reprobadas(notas)
+    reproboExamenes = hayNotasReprobadas(notas)
     if (not reproboExamenes and promedio >= 7):
         return 1
     elif (not reproboExamenes and promedio >= 4):
@@ -181,7 +181,7 @@ def aprobado(notas: list[int]) -> int:
     else:
         return 3
     
-def hay_notas_reprobadas(notas: list[int]) -> bool:
+def hayNotasReprobadas(notas: list[int]) -> bool:
     i: int = 0
     tieneReprobados: bool = False
     while (i < len(notas) and not tieneReprobados):
@@ -191,7 +191,7 @@ def hay_notas_reprobadas(notas: list[int]) -> bool:
     return tieneReprobados
 
 # 4.1
-def pedir_nombres_de_estudiantes() -> None:
+def pedirNombresDeEstudiantes() -> None:
     INPUT_PROMPT: str = "Ingrese el nombre del estudiante "
     lista: list[str] = []
     nombre: str = input(INPUT_PROMPT)
@@ -203,7 +203,7 @@ def pedir_nombres_de_estudiantes() -> None:
     print(lista)
 
 # 4.2
-def sistema_sube() -> None:
+def sistemaSube() -> None:
     INPUT_PROMPT: str = "C = Cargar creditos, D = Descontar creditos, X = Finalizar\n"
     saldo: int = 0
     movimiento: str = input(INPUT_PROMPT).upper()
@@ -223,7 +223,7 @@ def sistema_sube() -> None:
     print(historial)
 
 # 4.3
-def siete_y_medio() -> None:
+def sieteYMedio() -> None:
     INPUT_PROMPT: str = "Plantarse (P) o seguir (S)? "  
     puntuacion: float = 0
     cartas: list[float] = []
@@ -239,12 +239,24 @@ def siete_y_medio() -> None:
     print(cartas)
 
 # 5.1
-def pertenece_a_cada_uno(s: list[list[int]], e: int) -> list[bool]:
+def perteneceACadaUno(s: list[list[int]], e: int) -> list[bool]:
     res: list[bool] = []
 
     for array in s:
-        res.append(pertenece_B(array, e))
+        res.append(perteneceB(array, e))
 
     return res
 
-print(pertenece_a_cada_uno([[1,2],[1,3]], 2))
+# 5.2
+def esMatriz(s: list[list[int]]) -> bool:
+    i: int = 0
+    estaVacio = False
+    while(not estaVacio and i < len(s)):
+        estaVacio = len(s[i]) == 0
+        i+=1
+
+    return not estaVacio
+
+
+
+print(esMatriz([[1],[1],[1]]))
