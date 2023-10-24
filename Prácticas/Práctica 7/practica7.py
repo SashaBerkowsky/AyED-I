@@ -257,6 +257,13 @@ def esMatriz(s: list[list[int]]) -> bool:
 
     return not estaVacio
 
+# 5.3
+def filasOrdenadas(m: list[list[int]]) -> list[bool]:
+    res: list[bool] = []
+    
+    for array in m:
+        res.append(ordenados(array))
 
+    return res
 
-print(esMatriz([[1],[1],[1]]))
+print(filasOrdenadas([[1,4,3],[1],[1]]))
