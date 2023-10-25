@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 # 1.1
 def perteneceA(s: list[int], e: int) -> bool:
@@ -266,4 +267,13 @@ def filasOrdenadas(m: list[list[int]]) -> list[bool]:
 
     return res
 
-print(filasOrdenadas([[1,4,3],[1],[1]]))
+# 5.4
+def elevar_matriz(d: int, p: int) -> None:
+    m = np.random.randint(1,10,(d,d))
+    print(m)
+    while (p > 1):
+        m = np.dot(m, m)
+        p-=1
+    print(m)
+
+elevar_matriz(3, 2)
