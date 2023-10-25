@@ -13,6 +13,7 @@ Repositorio de Algoritmos y Estructuras de Datos I (me gusta mas como suena)
 | [5](Prácticas/Práctica%205) | [Recursión sobre Listas](Prácticas/Práctica%205/enunciado.pdf)    | [Práctica 5](Prácticas/Práctica%205/practica5.hs) |
 | [6](Prácticas/Práctica%206) | [Introducción a imperativo](Prácticas/Práctica%206/enunciado.pdf) | [Práctica 6](Prácticas/Práctica%206/practica6.py) |
 | [7](Prácticas/Práctica%207) | [Funciones sobre listas](Prácticas/Práctica%207/enunciado.pdf)    | [Práctica 7](Prácticas/Práctica%207/practica7.py) |
+| [8](Prácticas/Práctica%208) | [Funciones sobre listas](Prácticas/Práctica%208/enunciado.pdf)    | [Práctica 8](Prácticas/Práctica%208/practica8.py) |
 
 ## [Parciales](/Parciales)
 

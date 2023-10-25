@@ -275,5 +275,3 @@ def elevar_matriz(d: int, p: int) -> None:
         m = np.dot(m, m)
         p-=1
     print(m)
-
-elevar_matriz(3, 2)
