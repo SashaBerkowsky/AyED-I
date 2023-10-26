@@ -1,0 +1,8 @@
+primera linea
+segunda linea
+tercera linea
+cuarta linea
+
+ linea comentada
+       linea comentada
+      linea # sin comentar

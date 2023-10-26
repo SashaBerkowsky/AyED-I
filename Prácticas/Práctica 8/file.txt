@@ -1,0 +1,10 @@
+** linea agregada al principio
+primera linea
+segunda linea
+tercera linea
+cuarta linea
+
+# linea comentada
+    #   linea comentada
+      linea # sin comentar
+** linea agregada
