@@ -1,5 +1,6 @@
 import random
 from queue import LifoQueue as Pila
+from queue import Queue as Cola
 #   **********Archivos**********
 # 1.1
 def contar_lineas(nombre_archivo: str) -> int:
@@ -151,6 +152,7 @@ def buscar_el_maximo(p: Pila[int]) -> int:
     pilaAux: Pila[int] = Pila()
     maximo: int = p.get()
 
+    pilaAux.put(maximo)
     while(not p.empty()):
         elemento: int = p.get()
         if (elemento > maximo):
@@ -161,14 +163,119 @@ def buscar_el_maximo(p: Pila[int]) -> int:
 
     return maximo
 
+# Esta feo pero funciona
 # 11
 def esta_bien_balanceada(cuenta: str) -> bool:
-    esta_balanceada = False
+    parentesis_parejos: bool = cuenta.count("(") == cuenta.count(")")
+    elementos_cuenta = cuenta.split(" ")
     operaciones = ["+", "-", "*", "/"]
-    for char in cuenta:
+    cuenta_invalida: bool = False
+    i = 1
 
-        print(type(char))
+    while (i < (len(elementos_cuenta) - 1) and not cuenta_invalida):
+        elemento: str = elementos_cuenta[i]
+        elemento_ant: str = elementos_cuenta[i - 1]
+        elemento_sig: str = elementos_cuenta[i + 1]
+        if (elemento == "("):
+            cuenta_invalida = not pertenece(elemento_ant, operaciones) and pertenece(elemento_sig, operaciones)
+        elif (elemento == ")"):
+            cuenta_invalida = pertenece(elemento_ant, operaciones) and not pertenece(elemento_sig, operaciones)
 
-    return esta_balanceada
+        i+=1
+
+    return parentesis_parejos and not cuenta_invalida
+
+def pertenece(elemento, lista) -> bool:
+    i: int = 0
+    res = False
+
+    while (not res and i < len(lista)):
+        res = lista[i] == elemento
+        i += 1
+
+    return res
+
+# 12
+def evaluar_expresion_postfix(expresion: str) -> int:
+    operaciones: list[str] = ["+", "-", "*", "/"]
+    operandos: Pila[int] = Pila()
+    elementos = expresion.split(" ")
+
+    for e in elementos:
+        if(pertenece(e, operaciones)):
+            b = operandos.get()
+            a = operandos.get()
+            c: int = 0
+            match e:
+                case "+":
+                    c = a + b
+                case "-":
+                    c = a - b
+                case "*":
+                    c = a * b
+                case "/":
+                    c = int(a / b)
+            operandos.put(c)
+        else:
+            operandos.put(int(e))
+
+    return operandos.get()
+
+#   **********Colas**********
+# 13
+def generar_cola_al_azar(n: int, desde: int, hasta: int) -> Cola:
+    pila = generar_nros_al_azar(n, desde, hasta)
+    cola = Cola()
+
+    while(not pila.empty()):
+        cola.put(pila.get())
     
-esta_bien_balanceada("testeo")
+    return cola
+
+# 14
+def cantidad_elementos_cola(cola: Cola) -> int:
+    cantidad_elementos: int = 0
+
+    while(not cola.empty()):
+        cantidad_elementos += 1
+        cola.get()
+
+    return cantidad_elementos
+
+# 15
+def buscar_el_maximo_cola(cola: Cola[int]) -> int:
+    maximo: int = cola.get()
+    colaAux: Cola[int] = Cola()
+    
+    colaAux.put(maximo)
+    while(not cola.empty()):
+        elemento: int = cola.get()
+        colaAux.put(elemento)
+        maximo = elemento if elemento > maximo else maximo
+
+    rearmar_cola(colaAux, cola)
+    return maximo
+
+
+def rearmar_cola(colaAux, colaDef) -> None:
+    while(not colaAux.empty()):
+        colaDef.put(colaAux.get())
+
+# 16.1
+def armar_secuencia_bingo() -> Cola[int]:
+    sample: list[int] = random.sample(range(0, 100), 12)
+    cola: Cola[int] = Cola()
+
+    for elemento in sample:
+        cola.put(elemento)
+
+    return cola
+
+# 16.2
+def jugar_carton_de_bingo(carton: list[int], bolillero: Cola[])
+
+
+
+
+
+
