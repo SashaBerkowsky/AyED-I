@@ -341,15 +341,59 @@ def agrupar_por_longitud(nombre_archivo: str) -> dict:
 
     return diccionario
 
-print(agrupar_por_longitud("file.txt"))
-        
+# /*** A partir de aca me empieza a dar fiaca ***\
 
+# 20
+def promedio_estudiante_diccionario() -> dict:
+    notas: dict = {}
+    cantMaterias: dict = {}
+    nombre_archivo: str = "notes.csv"
+    archivo = open(nombre_archivo, "r")
+    archivo.readline()
+    linea: list[str] = quitar_salto_de_linea(archivo.readline()).split(",")
 
+    while(linea != [""]):
+        print(linea)
+        nro_lu = linea[0]
+        if (nro_lu in notas):
+            notas[nro_lu] += int(linea[3])
+            cantMaterias[nro_lu] += 1
+        else:
+            notas[nro_lu] = int(linea[3])
+            cantMaterias[nro_lu] = 1
+        linea: list[str] = quitar_salto_de_linea(archivo.readline()).split(",")
 
+    archivo.close()
 
+    for lu in notas:
+        notas[lu] = notas[lu] / cantMaterias[lu]
 
+    return notas
 
+# 21
+def palabra_mas_frecuente(nombre_archivo: str) -> str:
+    palabraMasFrecuente: tuple[str, int] = ("", 0)
+    archivo = open(nombre_archivo, "r")
+    contenido: list[str] = archivo.read().replace("\n", " ").split(" ")
+    archivo.close
 
+    for palabra in contenido:
+        if (palabra != ""):
+            cantApariciones = contenido.count(palabra)
+            if (cantApariciones > palabraMasFrecuente[1]):
+                palabraMasFrecuente = (palabra, cantApariciones)
 
+            contenido.remove(palabra)
 
+    print(palabraMasFrecuente)
+
+    return palabraMasFrecuente[0]
+
+# 22.2
+def visitar_sitio(historiales: dict, usuario: str, sitio: str) -> None:
+    if usuario in historiales:
+        historiales[usuario] = historiales[usuario].put(sitio)
+    else:
+        historial = Pila()
+        historiales[usuario] = historial.put(sitio)
 
