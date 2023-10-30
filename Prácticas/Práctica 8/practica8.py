@@ -272,7 +272,81 @@ def armar_secuencia_bingo() -> Cola[int]:
     return cola
 
 # 16.2
-def jugar_carton_de_bingo(carton: list[int], bolillero: Cola[])
+def jugar_carton_de_bingo(carton: list[int], bolillero: Cola[int]) -> int:
+    jugadas: int = 0
+
+    while(not bolillero.empty() and carton != []):
+        numero: int = bolillero.get()
+        if (numero in carton):
+            jugadas += 1
+            carton.remove(numero)
+
+    return jugadas
+
+# 17
+def n_pacientes_urgentes(cola: Cola[tuple[int, str, str]]) -> int:
+    pacientesUrgentes: int = 0
+    colaAux: Cola[tuple[int, str, str]] = Cola()
+
+    while(not cola.empty()):
+        paciente = cola.get()
+        pacientesUrgentes += 1 if paciente[0] <= 3 else 0
+         
+        colaAux.put(paciente)
+
+    rearmar_cola(colaAux, cola)
+    return pacientesUrgentes
+
+# 18
+def cola_clientes(cola: Cola[tuple[str, int, bool, bool]]) -> Cola[tuple[str, int, bool, bool]]:
+    colaOrdenada: Cola[tuple[str, int, bool, bool]] = Cola()
+    colaPreferencial: Cola[tuple[str, int, bool, bool]] = Cola() 
+    colaOrdinaria: Cola[tuple[str, int, bool, bool]] = Cola()
+
+    while (not cola.empty()):
+        cliente = cola.get()
+        tienePrioridad = cliente[3]
+        esPreferencial = cliente[2]
+
+        if (tienePrioridad):
+            colaOrdenada.put(cliente)
+        elif (esPreferencial):
+            colaPreferencial.put(cliente)
+        else:
+            colaOrdinaria.put(cliente)
+
+    while(not colaPreferencial.empty()):
+        colaOrdenada.put(colaPreferencial.get())
+
+    while(not colaOrdinaria.empty()):
+        colaOrdenada.put(colaOrdinaria.get())
+
+    return colaOrdenada
+
+#   **********Archivos**********
+# 19
+def agrupar_por_longitud(nombre_archivo: str) -> dict:
+    diccionario: dict = {} 
+    archivo = open(nombre_archivo)
+    contenido = archivo.read().splitlines()
+    archivo.close()
+
+    for linea in contenido:
+        for palabra in linea.split(" "):
+            longitudPalabra: int = len(palabra)
+            if (longitudPalabra in diccionario):
+                diccionario[longitudPalabra] = diccionario[longitudPalabra] + 1
+            else:
+                diccionario[longitudPalabra] = 1
+
+    return diccionario
+
+print(agrupar_por_longitud("file.txt"))
+        
+
+
+
+
 
 
 
