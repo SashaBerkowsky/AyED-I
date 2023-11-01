@@ -35,10 +35,6 @@ def contar_traducciones_iguales(ing: dict[str, str], ale: dict[str, str]) -> int
 
     return mismasTraducciones
 
-aleman = {"mano": "hand", "pie": "fuss", "dedo": "finger", "cara": "gesicht"}
-ingles = {"pie": "foot", "dedo": "finger", "mano": "hand"}
-print(contar_traducciones_iguales(aleman, ingles))
-
 # 4
 def convertir_a_diccionario(lista: list[int]) -> dict[int, int]:
     diccionario = {}
