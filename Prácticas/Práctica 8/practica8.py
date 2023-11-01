@@ -272,6 +272,7 @@ def armar_secuencia_bingo() -> Cola[int]:
     return cola
 
 # 16.2
+# no termine de entender el problema, poco bingo encima
 def jugar_carton_de_bingo(carton: list[int], bolillero: Cola[int]) -> int:
     jugadas: int = 0
 
@@ -389,11 +390,51 @@ def palabra_mas_frecuente(nombre_archivo: str) -> str:
 
     return palabraMasFrecuente[0]
 
+# No termine de entender el problema pero creo que va asi
 # 22.2
 def visitar_sitio(historiales: dict, usuario: str, sitio: str) -> None:
     if usuario in historiales:
-        historiales[usuario] = historiales[usuario].put(sitio)
+        historiales[usuario].put(sitio)
     else:
         historial = Pila()
-        historiales[usuario] = historial.put(sitio)
+        historial.put(sitio)
+        historiales[usuario] = historial
+
+# 22.3
+def navegar_atras(historiales: dict, usuario: str) -> None:
+    if usuario in historiales:
+        sitioActual: str = historiales[usuario].get()
+        sitioAnterior: str = historiales[usuario].get()
+        historiales[usuario].put(sitioActual)
+        historiales[usuario].put(sitioAnterior)
+
+
+# 22.4
+def navegar_adelante(historiales: dict, usuario: str) -> None:
+    if usuario in historiales:
+        navegar_atras(historiales, usuario)
+
+# 23.1
+def agregar_producto(inventario: dict, nombre: str, precio: float, cantidad: int) -> None:
+    datosDelProducto: dict = { "precio": precio, "cantidad": cantidad }
+    inventario[nombre] = datosDelProducto
+
+# 23.2
+def actualizar_stock(inventario: dict, nombre: str, cantidad: int) -> None:
+    inventario[nombre]["cantidad"] = cantidad
+
+# 23.3
+def actualizar_precio(inventario: dict, nombre: str, precio: float) -> None:
+    inventario[nombre]["precio"] = precio
+
+# 23.4
+def calcular_valor_inventario(inventario: dict) -> float:
+    valorTotal: float = 0
+
+    for nombreProducto in inventario:
+        producto: dict = inventario[nombreProducto]
+        print(producto["cantidad"]* producto["precio"])
+        valorTotal += producto["precio"] * producto["cantidad"]
+
+    return valorTotal
 
