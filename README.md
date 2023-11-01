@@ -28,3 +28,7 @@ Repositorio de Algoritmos y Estructuras de Datos I (me gusta mas como suena)
 
 - [Solución A](/Simulacros/1%20-%20Haskell/simulacro.hs)
 - [Solución B](/Simulacros/1%20-%20Haskell/simulacro-b.hs)
+
+### [Simulacro Segundo Parcial](/Simulacros/1%20-%20Haskell/enunciado.jpg)
+
+- [Solución A](/Simulacros/2%20-%20Python/simulacro.py)
