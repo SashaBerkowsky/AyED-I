@@ -452,5 +452,3 @@ def calcular_valor_inventario(inventario: dict) -> float:
 
     return valorTotal
 
-bolillero: Cola[int] = armar_secuencia_bingo()
-print(jugar_carton_de_bingo([1,2], bolillero))
