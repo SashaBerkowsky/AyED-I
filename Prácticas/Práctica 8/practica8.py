@@ -263,7 +263,7 @@ def rearmar_cola(colaAux, colaDef) -> None:
 
 # 16.1
 def armar_secuencia_bingo() -> Cola[int]:
-    sample: list[int] = random.sample(range(0, 100), 12)
+    sample: list[int] = random.sample(range(0, 100), 99)
     cola: Cola[int] = Cola()
 
     for elemento in sample:
@@ -272,15 +272,24 @@ def armar_secuencia_bingo() -> Cola[int]:
     return cola
 
 # 16.2
-# no termine de entender el problema, poco bingo encima
 def jugar_carton_de_bingo(carton: list[int], bolillero: Cola[int]) -> int:
+    bolilleroAux: Cola[int] = Cola()
+    numerosEncontrados: int = 0
     jugadas: int = 0
 
-    while(not bolillero.empty() and carton != []):
-        numero: int = bolillero.get()
+    while(numerosEncontrados < len(carton)):
+        numero = bolillero.get()
         if (numero in carton):
-            jugadas += 1
-            carton.remove(numero)
+            numerosEncontrados += 1
+
+        jugadas += 1
+        bolilleroAux.put(numero)
+
+    while (not bolillero.empty()):
+        bolilleroAux.put(bolillero.get())
+
+    while (not bolilleroAux.empty()):
+        bolillero.put(bolilleroAux.get())
 
     return jugadas
 
@@ -438,3 +447,5 @@ def calcular_valor_inventario(inventario: dict) -> float:
 
     return valorTotal
 
+bolillero: Cola[int] = armar_secuencia_bingo()
+print(jugar_carton_de_bingo([1,2], bolillero))
