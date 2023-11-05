@@ -309,6 +309,7 @@ def n_pacientes_urgentes(cola: Cola[tuple[int, str, str]]) -> int:
 
 # 18
 def cola_clientes(cola: Cola[tuple[str, int, bool, bool]]) -> Cola[tuple[str, int, bool, bool]]:
+    colaAux: Cola[tuple[str, int, bool, bool]] = Cola()
     colaOrdenada: Cola[tuple[str, int, bool, bool]] = Cola()
     colaPreferencial: Cola[tuple[str, int, bool, bool]] = Cola() 
     colaOrdinaria: Cola[tuple[str, int, bool, bool]] = Cola()
@@ -325,12 +326,16 @@ def cola_clientes(cola: Cola[tuple[str, int, bool, bool]]) -> Cola[tuple[str, in
         else:
             colaOrdinaria.put(cliente)
 
+        colaAux.put(cliente)
+
     while(not colaPreferencial.empty()):
         colaOrdenada.put(colaPreferencial.get())
 
     while(not colaOrdinaria.empty()):
         colaOrdenada.put(colaOrdinaria.get())
 
+    rearmar_cola(colaAux, cola)
+    
     return colaOrdenada
 
 #   **********Archivos**********
